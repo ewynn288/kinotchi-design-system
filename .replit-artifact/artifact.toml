@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/kinotchi-design-system/"
+title = "Kinotchi Design System"
+description = "A playful visual system for a desktop digital-pet widget inspired by Tamagotchi Paradise, with a colorful egg enclosure, square viewport, three-button controls, habitat backgrounds, evolving pet families, and companion care assets."
+version = "1.0.0"
+id = "artifacts/kinotchi-design-system"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/kinotchi-design-system/" ]
+localPort = 22588
+
+[services.development]
+run = "pnpm --filter @workspace/kinotchi-design-system run dev"
+
+[services.env]
+PORT = "22588"
+BASE_PATH = "/kinotchi-design-system/"

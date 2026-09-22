@@ -1,0 +1,924 @@
+/* GENERATED FROM tokens.json BY scripts/build-tokens.mjs -- DO NOT EDIT.
+ * Edit tokens.json instead; the dev server regenerates this file on change. */
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: "Kosugi Maru";
+  src: url("./fonts/KosugiMaru-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Register this package's own components so any consumer that imports this
+ * stylesheet (via `@import "<pkg>/styles.css"`) gets their utility classes
+ * generated -- Tailwind does not scan node_modules by default. Resolved
+ * relative to this file, so it points at this package's components whether it
+ * runs in the design system's own preview or inside a consuming app/sandbox. */
+@source "./components";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  --background: __DS_LIGHT_BACKGROUND__;
+  --foreground: __DS_LIGHT_FOREGROUND__;
+  --border: __DS_LIGHT_BORDER__;
+  --card: __DS_LIGHT_CARD__;
+  --card-foreground: __DS_LIGHT_CARDFOREGROUND__;
+  --sidebar: __DS_LIGHT_SIDEBAR__;
+  --sidebar-foreground: __DS_LIGHT_SIDEBARFOREGROUND__;
+  --sidebar-border: __DS_LIGHT_SIDEBARBORDER__;
+  --sidebar-primary: __DS_LIGHT_SIDEBARPRIMARY__;
+  --sidebar-primary-foreground: __DS_LIGHT_SIDEBARPRIMARYFOREGROUND__;
+  --sidebar-accent: __DS_LIGHT_SIDEBARACCENT__;
+  --sidebar-accent-foreground: __DS_LIGHT_SIDEBARACCENTFOREGROUND__;
+  --sidebar-ring: __DS_LIGHT_SIDEBARRING__;
+  --popover: __DS_LIGHT_POPOVER__;
+  --popover-foreground: __DS_LIGHT_POPOVERFOREGROUND__;
+  --primary: __DS_LIGHT_PRIMARY__;
+  --primary-foreground: __DS_LIGHT_PRIMARYFOREGROUND__;
+  --secondary: __DS_LIGHT_SECONDARY__;
+  --secondary-foreground: __DS_LIGHT_SECONDARYFOREGROUND__;
+  --muted: __DS_LIGHT_MUTED__;
+  --muted-foreground: __DS_LIGHT_MUTEDFOREGROUND__;
+  --accent: __DS_LIGHT_ACCENT__;
+  --accent-foreground: __DS_LIGHT_ACCENTFOREGROUND__;
+  --destructive: __DS_LIGHT_DESTRUCTIVE__;
+  --destructive-foreground: __DS_LIGHT_DESTRUCTIVEFOREGROUND__;
+  --input: __DS_LIGHT_INPUT__;
+  --ring: __DS_LIGHT_RING__;
+  --chart-1: __DS_LIGHT_CHART1__;
+  --chart-2: __DS_LIGHT_CHART2__;
+  --chart-3: __DS_LIGHT_CHART3__;
+  --chart-4: __DS_LIGHT_CHART4__;
+  --chart-5: __DS_LIGHT_CHART5__;
+
+  --app-font-sans: __DS_FONT_SANS__;
+  --app-font-serif: __DS_FONT_SERIF__;
+  --app-font-mono: __DS_FONT_MONO__;
+  --radius: __DS_RADIUS__;
+  --spacing: __DS_SPACING__;
+
+  /* Computed contrast borders (fallback then modern color-mix syntax). */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --card-border: hsl(var(--card));
+  --popover-border: hsl(var(--popover));
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+
+  --opaque-button-border-intensity: 9;  /* In terms of percentages */
+
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: __DS_DARK_BACKGROUND__;
+  --foreground: __DS_DARK_FOREGROUND__;
+  --border: __DS_DARK_BORDER__;
+  --card: __DS_DARK_CARD__;
+  --card-foreground: __DS_DARK_CARDFOREGROUND__;
+  --sidebar: __DS_DARK_SIDEBAR__;
+  --sidebar-foreground: __DS_DARK_SIDEBARFOREGROUND__;
+  --sidebar-border: __DS_DARK_SIDEBARBORDER__;
+  --sidebar-primary: __DS_DARK_SIDEBARPRIMARY__;
+  --sidebar-primary-foreground: __DS_DARK_SIDEBARPRIMARYFOREGROUND__;
+  --sidebar-accent: __DS_DARK_SIDEBARACCENT__;
+  --sidebar-accent-foreground: __DS_DARK_SIDEBARACCENTFOREGROUND__;
+  --sidebar-ring: __DS_DARK_SIDEBARRING__;
+  --popover: __DS_DARK_POPOVER__;
+  --popover-foreground: __DS_DARK_POPOVERFOREGROUND__;
+  --primary: __DS_DARK_PRIMARY__;
+  --primary-foreground: __DS_DARK_PRIMARYFOREGROUND__;
+  --secondary: __DS_DARK_SECONDARY__;
+  --secondary-foreground: __DS_DARK_SECONDARYFOREGROUND__;
+  --muted: __DS_DARK_MUTED__;
+  --muted-foreground: __DS_DARK_MUTEDFOREGROUND__;
+  --accent: __DS_DARK_ACCENT__;
+  --accent-foreground: __DS_DARK_ACCENTFOREGROUND__;
+  --destructive: __DS_DARK_DESTRUCTIVE__;
+  --destructive-foreground: __DS_DARK_DESTRUCTIVEFOREGROUND__;
+  --input: __DS_DARK_INPUT__;
+  --ring: __DS_DARK_RING__;
+  --chart-1: __DS_DARK_CHART1__;
+  --chart-2: __DS_DARK_CHART2__;
+  --chart-3: __DS_DARK_CHART3__;
+  --chart-4: __DS_DARK_CHART4__;
+  --chart-5: __DS_DARK_CHART5__;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --card-border: hsl(var(--card));
+  --popover-border: hsl(var(--popover));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
+
+/* ── Kinotchi Sprite Animations ─────────────────────────────────────────── */
+
+/* Body state: idle — gentle float bob */
+@keyframes kino-idle-bob {
+  0%,100% { transform: translateY(0px) scaleY(1); }
+  40%      { transform: translateY(-5px) scaleY(1.02); }
+  70%      { transform: translateY(-2px) scaleY(1.01); }
+}
+
+/* Body state: eating — a forward lean-and-nod cycle */
+@keyframes kino-eat-nod {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  20%     { transform: translateY(3px) rotate(-4deg); }
+  40%     { transform: translateY(6px) rotate(4deg); }
+  60%     { transform: translateY(3px) rotate(-3deg); }
+  80%     { transform: translateY(1px) rotate(0deg); }
+}
+
+/* Eating face — mouth chomp: open jaw at bite peak, closed at rest */
+@keyframes kino-eat-chomp {
+  0%      { transform: scaleY(1) translateY(0px); }
+  15%     { transform: scaleY(1.5) translateY(1px); }
+  30%     { transform: scaleY(0.5) translateY(-2px); }
+  50%     { transform: scaleY(1.6) translateY(2px); }
+  65%     { transform: scaleY(0.4) translateY(-2px); }
+  80%     { transform: scaleY(1.2) translateY(1px); }
+  100%    { transform: scaleY(1) translateY(0px); }
+}
+
+/* Eating face — eye scrunch during chomp (squint on hard bites) */
+@keyframes kino-eat-eye-scrunch {
+  0%,100% { transform: scaleY(1); }
+  30%     { transform: scaleY(0.5); }
+  65%     { transform: scaleY(0.4); }
+}
+
+/* Crumb fall and fade — each crumb travels downward and fades out,
+   then snaps back to origin at 100% for the next bite iteration.
+   Four variants with different x-drift for a scattered look.         */
+@keyframes kino-crumb-a {
+  0%      { transform: translate(0px, 0px) rotate(0deg);   opacity: 1; }
+  60%     { transform: translate(-6px, 14px) rotate(-40deg); opacity: 0.7; }
+  85%     { transform: translate(-8px, 22px) rotate(-60deg); opacity: 0; }
+  100%    { transform: translate(0px, 0px) rotate(0deg);   opacity: 0; }
+}
+@keyframes kino-crumb-b {
+  0%      { transform: translate(0px, 0px) rotate(0deg);   opacity: 1; }
+  60%     { transform: translate(5px, 16px) rotate(50deg);  opacity: 0.7; }
+  85%     { transform: translate(7px, 24px) rotate(70deg);  opacity: 0; }
+  100%    { transform: translate(0px, 0px) rotate(0deg);   opacity: 0; }
+}
+@keyframes kino-crumb-c {
+  0%      { transform: translate(0px, 0px) rotate(0deg);   opacity: 1; }
+  60%     { transform: translate(-3px, 12px) rotate(30deg); opacity: 0.6; }
+  85%     { transform: translate(-5px, 20px) rotate(45deg); opacity: 0; }
+  100%    { transform: translate(0px, 0px) rotate(0deg);   opacity: 0; }
+}
+@keyframes kino-crumb-d {
+  0%      { transform: translate(0px, 0px) rotate(0deg);   opacity: 1; }
+  60%     { transform: translate(8px, 10px) rotate(-30deg); opacity: 0.6; }
+  85%     { transform: translate(10px, 18px) rotate(-50deg); opacity: 0; }
+  100%    { transform: translate(0px, 0px) rotate(0deg);   opacity: 0; }
+}
+
+/* Body state: playing — a bouncy side-to-side hop */
+@keyframes kino-play-hop {
+  0%,100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+  15%     { transform: translateX(-8px) translateY(-10px) rotate(-6deg); }
+  30%     { transform: translateX(0px) translateY(0px) rotate(0deg); }
+  45%     { transform: translateX(8px) translateY(-10px) rotate(6deg); }
+  60%     { transform: translateX(0px) translateY(0px) rotate(0deg); }
+  75%     { transform: translateX(-4px) translateY(-5px) rotate(-3deg); }
+  90%     { transform: translateX(0px) translateY(0px) rotate(0deg); }
+}
+
+/* Idle alias used as the trailing infinite loop after finite actions */
+@keyframes kino-idle-loop {
+  0%,100% { transform: translateY(0px) scaleY(1); }
+  40%     { transform: translateY(-5px) scaleY(1.02); }
+  70%     { transform: translateY(-2px) scaleY(1.01); }
+}
+
+/* Emotion: content — very slow gentle breathe */
+@keyframes kino-em-content {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.03); }
+}
+
+/* Emotion: happy — quick vertical bounce */
+@keyframes kino-em-happy {
+  0%,100% { transform: translateY(0px) scale(1); }
+  25%     { transform: translateY(-6px) scale(1.04); }
+  50%     { transform: translateY(0px) scale(1); }
+  75%     { transform: translateY(-4px) scale(1.02); }
+}
+
+/* Emotion: excited — rapid bounce + rotate wiggle */
+@keyframes kino-em-excited {
+  0%,100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  10%     { transform: translateY(-8px) rotate(-5deg) scale(1.05); }
+  20%     { transform: translateY(0px) rotate(5deg) scale(1); }
+  30%     { transform: translateY(-8px) rotate(-4deg) scale(1.05); }
+  40%     { transform: translateY(0px) rotate(4deg) scale(1); }
+  50%     { transform: translateY(-6px) rotate(-3deg) scale(1.03); }
+  60%     { transform: translateY(0px) rotate(0deg) scale(1); }
+}
+
+/* Emotion: sad — slow droop and a sway */
+@keyframes kino-em-sad {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  30%     { transform: translateY(4px) rotate(-3deg); }
+  60%     { transform: translateY(2px) rotate(2deg); }
+  80%     { transform: translateY(3px) rotate(-1deg); }
+}
+
+/* Emotion: angry — rapid lateral tremor */
+@keyframes kino-em-angry {
+  0%,100% { transform: translateX(0px) rotate(0deg); }
+  15%     { transform: translateX(-4px) rotate(-3deg); }
+  30%     { transform: translateX(4px) rotate(3deg); }
+  45%     { transform: translateX(-3px) rotate(-2deg); }
+  60%     { transform: translateX(3px) rotate(2deg); }
+  75%     { transform: translateX(-2px) rotate(-1deg); }
+  90%     { transform: translateX(0px) rotate(0deg); }
+}
+
+/* Emotion: sick — slow irregular wobble */
+@keyframes kino-em-sick {
+  0%,100% { transform: rotate(0deg) translateY(0px); }
+  20%     { transform: rotate(-4deg) translateY(2px); }
+  40%     { transform: rotate(2deg) translateY(1px); }
+  60%     { transform: rotate(-3deg) translateY(3px); }
+  80%     { transform: rotate(1deg) translateY(1px); }
+}
+
+/* Emotion: hungry — impatient stamp */
+@keyframes kino-em-hungry {
+  0%,100% { transform: translateY(0px) scaleY(1); }
+  20%     { transform: translateY(-5px) scaleY(1.03); }
+  35%     { transform: translateY(2px) scaleY(0.96); }
+  50%     { transform: translateY(-3px) scaleY(1.02); }
+  65%     { transform: translateY(1px) scaleY(0.98); }
+  80%     { transform: translateY(0px) scaleY(1); }
+}
+
+/* Emotion: loved — slow float with a gentle sway */
+@keyframes kino-em-loved {
+  0%,100% { transform: translateY(0px) rotate(0deg); }
+  25%     { transform: translateY(-6px) rotate(-2deg); }
+  50%     { transform: translateY(-2px) rotate(0deg); }
+  75%     { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* Emotion: sleepy — very slow, deep breathe with a head-droop */
+@keyframes kino-em-sleepy {
+  0%,100% { transform: translateY(0px) rotate(0deg) scaleY(1); }
+  30%     { transform: translateY(2px) rotate(4deg) scaleY(0.97); }
+  60%     { transform: translateY(4px) rotate(6deg) scaleY(0.95); }
+  80%     { transform: translateY(2px) rotate(3deg) scaleY(0.97); }
+}
+
+/* Emotion: scared — fast tremor with upward jolt */
+@keyframes kino-em-scared {
+  0%,100% { transform: translateX(0px) translateY(0px); }
+  10%     { transform: translateX(-3px) translateY(-2px); }
+  20%     { transform: translateX(3px) translateY(0px); }
+  30%     { transform: translateX(-2px) translateY(-1px); }
+  40%     { transform: translateX(2px) translateY(0px); }
+  50%     { transform: translateX(0px) translateY(-8px); }
+  65%     { transform: translateX(-3px) translateY(0px); }
+  80%     { transform: translateX(3px) translateY(-1px); }
+  90%     { transform: translateX(-1px) translateY(0px); }
+}
+
+/* Emotion: bored — slow listless sway, slightly off-balance */
+@keyframes kino-em-bored {
+  0%,100% { transform: rotate(0deg) translateY(0px); }
+  20%     { transform: rotate(-2deg) translateY(1px); }
+  50%     { transform: rotate(1deg) translateY(2px); }
+  70%     { transform: rotate(-1deg) translateY(1px); }
+}
+
+/* Emotion: numb — almost-still flatten and settle */
+@keyframes kino-em-numb {
+  0%,100% { transform: translateY(0px) scaleX(1) scaleY(1); }
+  50%     { transform: translateY(1px) scaleX(0.97) scaleY(0.98); }
+}
+
+/* Floating accent (ZZZ, heart, sparkles) */
+@keyframes kino-float-up {
+  0%,100% { transform: translateY(0px) scale(1); opacity: 1; }
+  50%     { transform: translateY(-8px) scale(1.08); opacity: 0.85; }
+}
+
+/* Sparkle star pulse */
+@keyframes kino-sparkle {
+  0%,100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50%     { transform: scale(1.4) rotate(20deg); opacity: 0.8; }
+}
+
+/* Drool drop */
+@keyframes kino-drool {
+  0%,100% { transform: scaleY(1) translateY(0px); opacity: 1; }
+  50%     { transform: scaleY(1.3) translateY(3px); opacity: 0.9; }
+}
+
+/* Named animation utility classes ─────────────── */
+
+/* Semantic state posture primitives remain meaningful without motion. */
+.kino-state-posture-upright { transform: translateY(0) rotate(0deg); }
+.kino-state-posture-slouch  { transform: translateY(3px) rotate(-2deg); transform-origin: center bottom; }
+.kino-state-posture-droop   { transform: translateY(5px) rotate(4deg); transform-origin: center bottom; }
+.kino-state-posture-perk    { transform: translateY(-2px) scaleY(1.02); transform-origin: center bottom; }
+.kino-state-posture-float   { transform: translateY(-3px); }
+
+/* Body states */
+/* idle loops indefinitely */
+.kino-anim-idle { animation: kino-idle-bob 3.2s ease-in-out infinite; }
+
+/* eating: 3 finite nod cycles (4.2 s), then idle loop starts */
+.kino-anim-eat {
+  animation:
+    kino-eat-nod  1.4s ease-in-out 3,
+    kino-idle-loop 3.2s ease-in-out 4.2s infinite;
+}
+
+/* playing: 3 finite hops (5.4 s), then idle loop starts */
+.kino-anim-play {
+  animation:
+    kino-play-hop  1.8s cubic-bezier(.36,.07,.19,.97) 3,
+    kino-idle-loop 3.2s ease-in-out 5.4s infinite;
+}
+
+/* Emotion states (applied to the SVG face group inside PetSprite) */
+.kino-em-content   { animation: kino-em-content  4s ease-in-out infinite; }
+.kino-em-happy     { animation: kino-em-happy     1.2s ease-in-out infinite; }
+.kino-em-excited   { animation: kino-em-excited   0.9s ease-in-out infinite; }
+.kino-em-sad       { animation: kino-em-sad       3s ease-in-out infinite; }
+.kino-em-angry     { animation: kino-em-angry     0.7s ease-in-out infinite; }
+.kino-em-sick      { animation: kino-em-sick      2.5s ease-in-out infinite; }
+.kino-em-hungry    { animation: kino-em-hungry    1.6s ease-in-out infinite; }
+.kino-em-loved     { animation: kino-em-loved     2.8s ease-in-out infinite; }
+.kino-em-sleepy    { animation: kino-em-sleepy    4.5s ease-in-out infinite; }
+.kino-em-scared    { animation: kino-em-scared    0.8s ease-in-out infinite; }
+.kino-em-bored     { animation: kino-em-bored     5s ease-in-out infinite; }
+.kino-em-numb      { animation: kino-em-numb      6s ease-in-out infinite; }
+
+/* Egg enclosure menu icon — brief lift on selection, then rests enlarged and pressed */
+@keyframes kino-egg-menu-select {
+  0%   { transform: translateY(0px) scale(1); }
+  55%  { transform: translateY(3px) scale(1.2); }
+  100% { transform: translateY(2px) scale(1.14); }
+}
+
+.kino-egg-menu-selected {
+  animation: kino-egg-menu-select 220ms cubic-bezier(.22,.8,.3,1);
+}
+
+/* Accent element floats */
+.kino-anim-float   { animation: kino-float-up  2.4s ease-in-out infinite; }
+.kino-anim-sparkle { animation: kino-sparkle   1.0s ease-in-out infinite; }
+.kino-anim-drool   { animation: kino-drool     1.8s ease-in-out infinite; }
+
+/* Eating face — mouth chomps 3× matching the bite-nod cycle count */
+.kino-eat-mouth {
+  animation: kino-eat-chomp 1.4s ease-in-out 3;
+  transform-origin: center top;
+}
+
+/* Eating face — eye scrunch synced with chomp */
+.kino-eat-eye {
+  animation: kino-eat-eye-scrunch 1.4s ease-in-out 3;
+  transform-origin: center center;
+}
+
+/* Crumbs: staggered delays so they scatter at different moments per bite.
+   Each runs 3 iterations to match the three-bite cycle.               */
+.kino-eat-crumb-a { animation: kino-crumb-a 1.4s ease-in 3; animation-delay: 0.25s; }
+.kino-eat-crumb-b { animation: kino-crumb-b 1.4s ease-in 3; animation-delay: 0.35s; }
+.kino-eat-crumb-c { animation: kino-crumb-c 1.4s ease-in 3; animation-delay: 0.20s; }
+.kino-eat-crumb-d { animation: kino-crumb-d 1.4s ease-in 3; animation-delay: 0.40s; }
+
+/* Reduced-motion: disable every real kino animation class */
+@media (prefers-reduced-motion: reduce) {
+  .kino-anim-idle,
+  .kino-anim-eat,
+  .kino-anim-play,
+  .kino-em-content,
+  .kino-em-happy,
+  .kino-em-excited,
+  .kino-em-sad,
+  .kino-em-angry,
+  .kino-em-sick,
+  .kino-em-hungry,
+  .kino-em-loved,
+  .kino-em-sleepy,
+  .kino-em-scared,
+  .kino-em-bored,
+  .kino-em-numb,
+  .kino-egg-menu-selected,
+  .kino-anim-float,
+  .kino-anim-sparkle,
+  .kino-anim-drool,
+  .kino-eat-mouth,
+  .kino-eat-eye,
+  .kino-eat-crumb-a,
+  .kino-eat-crumb-b,
+  .kino-eat-crumb-c,
+  .kino-eat-crumb-d {
+    animation: none !important;
+  }
+}
+
+/* ── Kinotchi Semantic Pet-State Animations ─────────────────────────────────
+   New classes for the semantic state API (pet-state.tsx).
+   All use only transform/opacity for GPU compositing.
+   Every class is listed in the reduced-motion block at the bottom.          */
+
+/* Idle variant for recovering state — very slow, shallow bob (lower energy) */
+@keyframes kino-state-recover-idle {
+  0%,100% { transform: translateY(0px) scaleY(1); }
+  50%     { transform: translateY(-2px) scaleY(1.005); }
+}
+.kino-state-idle-recover {
+  animation: kino-state-recover-idle 5s ease-in-out infinite;
+}
+
+/* Entry: settle — soft gentle land from above (healthy, recovering) */
+@keyframes kino-state-enter-settle {
+  0%   { transform: translateY(-6px) scale(0.97); opacity: 0.7; }
+  60%  { transform: translateY(2px)  scale(1.01); opacity: 1;   }
+  100% { transform: translateY(0px)  scale(1);    opacity: 1;   }
+}
+.kino-state-entry-settle {
+  animation: kino-state-enter-settle 380ms cubic-bezier(.25,.8,.3,1) forwards;
+}
+
+/* Entry: sag — droops down into frame (sick, tired, bored, messy) */
+@keyframes kino-state-enter-sag {
+  0%   { transform: translateY(-4px) scale(1.02); opacity: 0.6; }
+  50%  { transform: translateY(4px)  scale(0.98); opacity: 1;   }
+  100% { transform: translateY(0px)  scale(1);    opacity: 1;   }
+}
+.kino-state-entry-sag {
+  animation: kino-state-enter-sag 400ms ease-out forwards;
+}
+
+/* Entry: bounce — energetic pop up (nourished, rested, engaged) */
+@keyframes kino-state-enter-bounce {
+  0%   { transform: translateY(8px)  scale(0.95); opacity: 0.5; }
+  40%  { transform: translateY(-8px) scale(1.06); opacity: 1;   }
+  65%  { transform: translateY(2px)  scale(0.99); opacity: 1;   }
+  80%  { transform: translateY(-3px) scale(1.02); opacity: 1;   }
+  100% { transform: translateY(0px)  scale(1);    opacity: 1;   }
+}
+.kino-state-entry-bounce {
+  animation: kino-state-enter-bounce 450ms cubic-bezier(.3,.07,.2,.97) forwards;
+}
+
+/* Entry: bob — forward lean (hungry) */
+@keyframes kino-state-enter-bob {
+  0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.6; }
+  35%  { transform: translateY(-5px) rotate(-3deg); opacity: 1;   }
+  65%  { transform: translateY(2px)  rotate(2deg);  opacity: 1;   }
+  100% { transform: translateY(0px)  rotate(0deg);  opacity: 1;   }
+}
+.kino-state-entry-bob {
+  animation: kino-state-enter-bob 360ms ease-out forwards;
+}
+
+/* Entry: shake — irritated tremor (messy) */
+@keyframes kino-state-enter-shake {
+  0%,100% { transform: translateX(0px);  opacity: 1; }
+  20%     { transform: translateX(-5px); opacity: 1; }
+  40%     { transform: translateX(5px);  opacity: 1; }
+  60%     { transform: translateX(-4px); opacity: 1; }
+  80%     { transform: translateX(3px);  opacity: 1; }
+}
+.kino-state-entry-shake {
+  animation: kino-state-enter-shake 420ms ease-in-out forwards;
+}
+
+/* Entry: float — gentle rise (relieved) */
+@keyframes kino-state-enter-float {
+  0%   { transform: translateY(6px) scale(0.97); opacity: 0.5; }
+  50%  { transform: translateY(-4px) scale(1.02); opacity: 1;  }
+  100% { transform: translateY(0px)  scale(1);    opacity: 1;  }
+}
+.kino-state-entry-float {
+  animation: kino-state-enter-float 420ms ease-out forwards;
+}
+
+/* Entry: rise — slow lift (recovering) */
+@keyframes kino-state-enter-rise {
+  0%   { transform: translateY(8px) scale(0.96); opacity: 0.4; }
+  100% { transform: translateY(0px) scale(1);    opacity: 1;   }
+}
+.kino-state-entry-rise {
+  animation: kino-state-enter-rise 600ms ease-out forwards;
+}
+
+/* Reduced-motion: disable all new semantic state classes */
+@media (prefers-reduced-motion: reduce) {
+  .kino-state-idle-recover,
+  .kino-state-entry-settle,
+  .kino-state-entry-sag,
+  .kino-state-entry-bounce,
+  .kino-state-entry-bob,
+  .kino-state-entry-shake,
+  .kino-state-entry-float,
+  .kino-state-entry-rise {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ── Habitat Environmental Animations ──────────────────────────────────────
+   One motion per habitat, placed away from the pet's center-bottom stage.
+   All amplitudes are restrained (≤8 px translate, ≤1 opacity swing).
+   Every class is disabled under prefers-reduced-motion below.            */
+
+/* SF Bay Area — slow fog drift left-to-right */
+@keyframes hab-sf-fog {
+  0%,100% { transform: translateX(0px);  opacity: 0.18; }
+  50%     { transform: translateX(12px); opacity: 0.28; }
+}
+.hab-sf-fog { animation: hab-sf-fog 7s ease-in-out infinite; }
+
+/* Los Angeles — Ferris wheel slow rotation (transform-origin set inline) */
+@keyframes hab-la-wheel {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+.hab-la-wheel { animation: hab-la-wheel 14s linear infinite; }
+
+/* Japan — cherry-blossom petal drift down and across */
+@keyframes hab-jp-petal-a {
+  0%         { transform: translate(0px, 0px)   rotate(0deg);   opacity: 0.85; }
+  70%        { transform: translate(6px, 14px)  rotate(25deg);  opacity: 0.7;  }
+  100%       { transform: translate(8px, 20px)  rotate(35deg);  opacity: 0;    }
+}
+@keyframes hab-jp-petal-b {
+  0%         { transform: translate(0px, 0px)   rotate(0deg);   opacity: 0.8;  }
+  70%        { transform: translate(-5px, 12px) rotate(-20deg); opacity: 0.65; }
+  100%       { transform: translate(-7px, 18px) rotate(-30deg); opacity: 0;    }
+}
+@keyframes hab-jp-petal-c {
+  0%         { transform: translate(0px, 0px)   rotate(0deg);   opacity: 0.75; }
+  70%        { transform: translate(4px, 10px)  rotate(15deg);  opacity: 0.55; }
+  100%       { transform: translate(5px, 16px)  rotate(22deg);  opacity: 0;    }
+}
+.hab-jp-petal-a { animation: hab-jp-petal-a 4.5s ease-in infinite; }
+.hab-jp-petal-b { animation: hab-jp-petal-b 5.2s ease-in infinite; animation-delay: 1.3s; }
+.hab-jp-petal-c { animation: hab-jp-petal-c 4s   ease-in infinite; animation-delay: 2.6s; }
+
+/* Beach — wave crest cresting (translateX slide) */
+@keyframes hab-beach-wave {
+  0%,100% { transform: translateX(0px);  }
+  50%     { transform: translateX(-10px); }
+}
+.hab-beach-wave { animation: hab-beach-wave 3.2s ease-in-out infinite; }
+
+/* Space — star twinkle (opacity pulse, staggered) */
+@keyframes hab-space-twinkle {
+  0%,100% { opacity: 0.9; }
+  50%     { opacity: 0.25; }
+}
+.hab-space-twinkle-a { animation: hab-space-twinkle 2.1s ease-in-out infinite; }
+.hab-space-twinkle-b { animation: hab-space-twinkle 3s   ease-in-out infinite; animation-delay: 0.7s; }
+.hab-space-twinkle-c { animation: hab-space-twinkle 2.6s ease-in-out infinite; animation-delay: 1.4s; }
+
+/* Launch Pad — launch smoke billow (scale + fade) */
+@keyframes hab-launch-smoke {
+  0%   { transform: translateY(0px)   scale(1);    opacity: 0.55; }
+  60%  { transform: translateY(-8px)  scale(1.25); opacity: 0.35; }
+  100% { transform: translateY(-14px) scale(1.5);  opacity: 0;    }
+}
+.hab-launch-smoke-a { animation: hab-launch-smoke 2.4s ease-out infinite; }
+.hab-launch-smoke-b { animation: hab-launch-smoke 2.4s ease-out infinite; animation-delay: 0.8s; }
+.hab-launch-smoke-c { animation: hab-launch-smoke 2.4s ease-out infinite; animation-delay: 1.6s; }
+
+/* Rocket Interior — console indicator blink */
+@keyframes hab-rocket-blink {
+  0%,45%,55%,100% { opacity: 1;   }
+  50%             { opacity: 0.1; }
+}
+.hab-rocket-blink-a { animation: hab-rocket-blink 2s   ease-in-out infinite; }
+.hab-rocket-blink-b { animation: hab-rocket-blink 2s   ease-in-out infinite; animation-delay: 0.65s; }
+.hab-rocket-blink-c { animation: hab-rocket-blink 2s   ease-in-out infinite; animation-delay: 1.3s; }
+
+/* Spooky Cemetery — drifting ground fog (two separate side banks in SVG).
+   Max translate ±6px. Left bank's rightmost point at rest: cx=48+rx=12=60; +6px → 66 < 75 ✓
+   Right bank's leftmost point at rest: cx=188−rx=14=174; −6px → 168 > 165 ✓             */
+@keyframes hab-cemetery-fog {
+  0%,100% { transform: translateX(0px); opacity: 0.22; }
+  50%     { transform: translateX(6px); opacity: 0.30; }
+}
+.hab-cemetery-fog { animation: hab-cemetery-fog 6s ease-in-out infinite; }
+
+/* Desert — tumbleweed rolling right */
+@keyframes hab-desert-tumbleweed {
+  0%   { transform: translateX(0px)   rotate(0deg);   }
+  100% { transform: translateX(28px)  rotate(200deg); }
+}
+.hab-desert-tumbleweed {
+  animation: hab-desert-tumbleweed 4s linear infinite alternate;
+}
+
+/* Austin (Pennybacker Bridge) — bats emerge from beneath the bridge and stream upper-right.
+   Desktop 5-col card: xMidYMid slice crops SVG to approx x=48..192 (viewBox units).
+   Spawn zone: x=76–92, y=88–96 (center-left under inner span, within visible range).
+   All bats travel diagonally upper-right; final translate exits past x=192 crop boundary.
+   Each bat is opaque for most of its arc; fades only near exit so reset is invisible.
+   transformBox:view-box + absolute SVG transformOrigin. One keyframe per bat for varied path.
+   Staggered negative delays = continuously populated stream with no sync restart.           */
+
+@keyframes hab-austin-bat-1 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate(  8px, -10px); opacity: 0.88; }
+  60%  { transform: translate( 62px, -54px); opacity: 0.85; }
+  85%  { transform: translate( 95px, -78px); opacity: 0.40; }
+  100% { transform: translate(115px, -92px); opacity: 0;    }
+}
+@keyframes hab-austin-bat-2 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate(  7px,  -8px); opacity: 0.86; }
+  60%  { transform: translate( 58px, -50px); opacity: 0.84; }
+  85%  { transform: translate( 90px, -74px); opacity: 0.38; }
+  100% { transform: translate(108px, -88px); opacity: 0;    }
+}
+@keyframes hab-austin-bat-3 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate(  9px, -12px); opacity: 0.88; }
+  60%  { transform: translate( 66px, -58px); opacity: 0.86; }
+  85%  { transform: translate( 98px, -82px); opacity: 0.38; }
+  100% { transform: translate(118px, -96px); opacity: 0;    }
+}
+@keyframes hab-austin-bat-4 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate(  6px,  -7px); opacity: 0.84; }
+  60%  { transform: translate( 54px, -48px); opacity: 0.82; }
+  85%  { transform: translate( 86px, -72px); opacity: 0.36; }
+  100% { transform: translate(104px, -86px); opacity: 0;    }
+}
+@keyframes hab-austin-bat-5 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate( 10px, -11px); opacity: 0.88; }
+  60%  { transform: translate( 70px, -60px); opacity: 0.85; }
+  85%  { transform: translate(102px, -84px); opacity: 0.38; }
+  100% { transform: translate(122px, -98px); opacity: 0;    }
+}
+@keyframes hab-austin-bat-6 {
+  0%   { transform: translate(  0px,   0px); opacity: 0;    }
+  10%  { transform: translate(  8px,  -9px); opacity: 0.86; }
+  60%  { transform: translate( 60px, -52px); opacity: 0.84; }
+  85%  { transform: translate( 92px, -76px); opacity: 0.38; }
+  100% { transform: translate(110px, -90px); opacity: 0;    }
+}
+
+/* Six bat groups — staggered stream, continuous loop, no sync restart */
+.hab-austin-bat-1 { animation: hab-austin-bat-1 4.2s ease-in-out infinite; animation-delay:  0.0s; }
+.hab-austin-bat-2 { animation: hab-austin-bat-2 4.0s ease-in-out infinite; animation-delay: -0.7s; }
+.hab-austin-bat-3 { animation: hab-austin-bat-3 4.4s ease-in-out infinite; animation-delay: -1.5s; }
+.hab-austin-bat-4 { animation: hab-austin-bat-4 3.9s ease-in-out infinite; animation-delay: -2.2s; }
+.hab-austin-bat-5 { animation: hab-austin-bat-5 4.3s ease-in-out infinite; animation-delay: -3.0s; }
+.hab-austin-bat-6 { animation: hab-austin-bat-6 4.1s ease-in-out infinite; animation-delay: -3.6s; }
+
+/* Reduced-motion: disable all habitat environment animations */
+@media (prefers-reduced-motion: reduce) {
+  .hab-sf-fog,
+  .hab-la-wheel,
+  .hab-jp-petal-a,
+  .hab-jp-petal-b,
+  .hab-jp-petal-c,
+  .hab-beach-wave,
+  .hab-space-twinkle-a,
+  .hab-space-twinkle-b,
+  .hab-space-twinkle-c,
+  .hab-launch-smoke-a,
+  .hab-launch-smoke-b,
+  .hab-launch-smoke-c,
+  .hab-rocket-blink-a,
+  .hab-rocket-blink-b,
+  .hab-rocket-blink-c,
+  .hab-cemetery-fog,
+  .hab-desert-tumbleweed,
+  .hab-austin-bat-1,
+  .hab-austin-bat-2,
+  .hab-austin-bat-3,
+  .hab-austin-bat-4,
+  .hab-austin-bat-5,
+  .hab-austin-bat-6 {
+    animation: none !important;
+  }
+}
