@@ -410,7 +410,7 @@ assert(hungryHtml.includes('Pip'), 'accessible label contains petName');
 
 // Invalid state falls back to healthy
 const invalidHtml = render(React.createElement(PetStateDisplay, {
-  state: 'not-a-real-state',
+  state: 'not-a-real-state' as PetStateInput,
 }));
 assert(invalidHtml.includes('data-state="healthy"'), 'invalid state falls back to healthy in render');
 
