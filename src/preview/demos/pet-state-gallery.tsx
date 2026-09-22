@@ -19,6 +19,7 @@ import {
   PetStateDisplay,
   EffectAccent,
   type PetStateKind,
+  type PetStateInput,
   type PetStateMeta,
   type EnvironmentEffect,
 } from '../../components/pet-state';
@@ -493,7 +494,7 @@ function InvalidFallbackDemo() {
       </p>
       <div className="flex flex-wrap items-center gap-6">
         <div className="flex flex-col items-center gap-2">
-          <PetStateDisplay state="totally-made-up-state" kind="nubbin" />
+          <PetStateDisplay state={'totally-made-up-state' as PetStateInput} kind="nubbin" />
           <code className="text-xs font-mono text-muted-foreground">"totally-made-up-state"</code>
         </div>
         <div className="flex flex-col items-center gap-2">
@@ -501,7 +502,7 @@ function InvalidFallbackDemo() {
           <code className="text-xs font-mono text-muted-foreground">undefined</code>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <PetStateDisplay state="" kind="nubbin" />
+          <PetStateDisplay state={'' as PetStateInput} kind="nubbin" />
           <code className="text-xs font-mono text-muted-foreground">""</code>
         </div>
       </div>

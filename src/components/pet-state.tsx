@@ -31,11 +31,11 @@
 // Re-exports from canonical source (no duplication)
 // ---------------------------------------------------------------------------
 
-export type { PetKind, EmotionKind } from '../preview/kinotchi';
-export { PetSprite } from '../preview/kinotchi';
+export type { PetKind, EmotionKind } from './kinotchi';
+export { PetSprite } from './kinotchi';
 
-import { PetSprite } from '../preview/kinotchi';
-import type { PetKind, EmotionKind } from '../preview/kinotchi';
+import { PetSprite } from './kinotchi';
+import type { PetKind, EmotionKind } from './kinotchi';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -347,7 +347,7 @@ export function resolvePetState(raw: unknown): PetStateMeta {
 // Additional common synonyms follow.
 // ---------------------------------------------------------------------------
 
-export const PET_STATE_ALIASES: Record<string, PetStateKind> = {
+export const PET_STATE_ALIASES = {
   // ── Identity: all 11 requested names ───────────────────────────────────
   healthy:    'healthy',
   sick:       'sick',
@@ -383,14 +383,19 @@ export const PET_STATE_ALIASES: Record<string, PetStateKind> = {
   excited:  'engaged',   // emotion primitive → engaged state
   playing:  'engaged',
   dull:     'bored',
-};
+} as const satisfies Record<string, PetStateKind>;
+
+export type PetStateAlias = keyof typeof PET_STATE_ALIASES;
+export type PetStateInput = PetStateKind | PetStateAlias;
 
 export function resolveWithAliases(raw: unknown): PetStateMeta {
-  if (typeof raw === 'string') {
-    const canonical = PET_STATE_ALIASES[raw] ?? raw;
-    return resolvePetState(canonical);
+  if (
+    typeof raw === 'string' &&
+    Object.prototype.hasOwnProperty.call(PET_STATE_ALIASES, raw)
+  ) {
+    return PET_STATE_REGISTRY[PET_STATE_ALIASES[raw as PetStateAlias]];
   }
-  return PET_STATE_REGISTRY.healthy;
+  return resolvePetState(raw);
 }
 
 // ---------------------------------------------------------------------------
@@ -583,7 +588,7 @@ export type PetStateDisplayProps = {
    * Canonical state name or alias. Invalid values fall back to "healthy".
    * All 11 canonical names pass through directly; aliases expand first.
    */
-  state?: string;
+  state?: PetStateInput;
   /** Which pet creature to render. Defaults to 'nubbin'. */
   kind?: PetKind;
   /** Pet name substituted into the accessible aria-label. */
@@ -654,6 +659,7 @@ export function PetStateDisplay({
               kind={kind}
               size={size}
               label={ariaLabel}
+              decorative
               hideFace
               emotion={meta.face}
               emotionPlayState={forceReducedMotion ? 'paused' : 'running'}
