@@ -2,7 +2,7 @@
 
 ## Overview
 
-`src/components/pet-state.tsx` provides a typed, product-agnostic semantic state layer that maps Kinotchi care states to face treatments, body motion, environment effects, accessible labels, and visual pairing guidance. It imports `PetSprite`, `PetKind`, and `EmotionKind` from the canonical `kinotchi.tsx` source and re-exports them — there is no duplication.
+`src/components/pet-state.tsx` provides a typed, product-agnostic semantic state layer that maps Kinotchi care states to face treatments, body motion, environment effects, accessible labels, and visual pairing guidance. It imports `PetSprite`, `PetKind`, and `EmotionKind` from the canonical `src/components/kinotchi.tsx` source and re-exports them — there is no duplication.
 
 Exported as: `@workspace/kinotchi-design-system/components/pet-state`
 
