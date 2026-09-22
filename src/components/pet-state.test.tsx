@@ -20,6 +20,7 @@ import {
   EffectAccent,
   PetSprite,
   type PetStateKind,
+  type PetStateInput,
   type PetStateMeta,
   type EmotionKind,
   type PetKind,
@@ -534,6 +535,37 @@ assert(_validState === 'healthy', 'PetStateKind type accepts "healthy"');
 assert(_validEffect === 'sparkles', 'EnvironmentEffect type accepts "sparkles"');
 assert(_validPosture === 'upright', 'PostureKind type accepts "upright"');
 assert(_validEnergy === 'high', 'EnergyTier type accepts "high"');
+
+
+// ---------------------------------------------------------------------------
+// 24. Accessible image ownership and finite public input types
+// ---------------------------------------------------------------------------
+
+section('Accessible image ownership and finite public input types');
+
+const standaloneSpriteHtml = render(
+  React.createElement(PetSprite, { kind: 'nubbin', label: 'Pip' }),
+);
+assertEqual(
+  (standaloneSpriteHtml.match(/role="img"/g) ?? []).length,
+  1,
+  'standalone PetSprite exposes one accessible image',
+);
+assert(standaloneSpriteHtml.includes('aria-label="Pip"'), 'standalone PetSprite uses its supplied accessible label');
+
+const semanticPetHtml = render(
+  React.createElement(PetStateDisplay, { state: 'hungry', petName: 'Pip' }),
+);
+assertEqual(
+  (semanticPetHtml.match(/role="img"/g) ?? []).length,
+  1,
+  'PetStateDisplay exposes exactly one accessible image',
+);
+assert(semanticPetHtml.includes('aria-label="Pip is hungry"'), 'PetStateDisplay owns the semantic accessible label');
+assert(semanticPetHtml.includes('aria-hidden="true"'), 'nested PetSprite is decorative inside PetStateDisplay');
+
+const _validAliasInput: PetStateInput = 'sleepy';
+assert(_validAliasInput === 'sleepy', 'PetStateInput accepts a documented alias');
 
 // ---------------------------------------------------------------------------
 // Results
